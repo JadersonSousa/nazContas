@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icon/lg-naz.gif</file>
+    <file>icon/home.png</file>
+    <file>icon/Logo-Nazaria.png</file>
+    <file>icon/config.png</file>
+    <file>icon/lancamentos.png</file>
+    <file>icon/relatorios.png</file>
+    <file>icon/setConfig.png</file>
+    <file>icon/setLanc.png</file>
+  </qresource>
+</RCC>
