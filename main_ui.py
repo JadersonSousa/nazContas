@@ -178,13 +178,105 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet(u"")
         self.pg_home = QWidget()
         self.pg_home.setObjectName(u"pg_home")
-        self.verticalLayout_8 = QVBoxLayout(self.pg_home)
+        self.frame_home = QFrame(self.pg_home)
+        self.frame_home.setObjectName(u"frame_home")
+        self.frame_home.setGeometry(QRect(9, 55, 1008, 526))
+        self.frame_home.setFrameShape(QFrame.StyledPanel)
+        self.frame_home.setFrameShadow(QFrame.Raised)
+        self.frame_6 = QFrame(self.frame_home)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setGeometry(QRect(10, 10, 541, 140))
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.widget = QWidget(self.frame_6)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(10, 10, 180, 70))
+        self.verticalLayout_8 = QVBoxLayout(self.widget)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.label_2 = QLabel(self.pg_home)
-        self.label_2.setObjectName(u"label_2")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.lb_ServiHome = QLabel(self.widget)
+        self.lb_ServiHome.setObjectName(u"lb_ServiHome")
+        self.lb_ServiHome.setMaximumSize(QSize(16777215, 20))
+        font4 = QFont()
+        font4.setFamily(u"Arial Narrow")
+        font4.setBold(True)
+        font4.setWeight(75)
+        self.lb_ServiHome.setFont(font4)
+        self.lb_ServiHome.setLayoutDirection(Qt.LeftToRight)
 
-        self.verticalLayout_8.addWidget(self.label_2)
+        self.verticalLayout_8.addWidget(self.lb_ServiHome)
 
+        self.Subframe_home = QFrame(self.widget)
+        self.Subframe_home.setObjectName(u"Subframe_home")
+        self.Subframe_home.setMaximumSize(QSize(16777215, 80))
+        self.Subframe_home.setStyleSheet(u"#Subframe_home {\n"
+"	background-color: #fff;\n"
+"	border-radius: 15px;\n"
+"	box-shadow: inset 0px 10px 38px -3px rgba(0,0,0,0.1);\n"
+"}")
+        self.Subframe_home.setFrameShape(QFrame.StyledPanel)
+        self.Subframe_home.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_13 = QHBoxLayout(self.Subframe_home)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.lb_nmServiHome = QLabel(self.Subframe_home)
+        self.lb_nmServiHome.setObjectName(u"lb_nmServiHome")
+        font5 = QFont()
+        font5.setPointSize(20)
+        self.lb_nmServiHome.setFont(font5)
+        self.lb_nmServiHome.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_13.addWidget(self.lb_nmServiHome)
+
+
+        self.verticalLayout_8.addWidget(self.Subframe_home)
+
+        self.layoutWidget_2 = QWidget(self.frame_6)
+        self.layoutWidget_2.setObjectName(u"layoutWidget_2")
+        self.layoutWidget_2.setGeometry(QRect(210, 10, 180, 70))
+        self.verticalLayout_10 = QVBoxLayout(self.layoutWidget_2)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.lb_ServiHome_2 = QLabel(self.layoutWidget_2)
+        self.lb_ServiHome_2.setObjectName(u"lb_ServiHome_2")
+        self.lb_ServiHome_2.setMaximumSize(QSize(16777215, 20))
+        self.lb_ServiHome_2.setFont(font4)
+        self.lb_ServiHome_2.setLayoutDirection(Qt.LeftToRight)
+
+        self.verticalLayout_10.addWidget(self.lb_ServiHome_2)
+
+        self.Subframe_home_2 = QFrame(self.layoutWidget_2)
+        self.Subframe_home_2.setObjectName(u"Subframe_home_2")
+        self.Subframe_home_2.setMaximumSize(QSize(16777215, 80))
+        self.Subframe_home_2.setStyleSheet(u"#Subframe_home_2 {\n"
+"	background-color: #fff;\n"
+"	border-radius: 15px;\n"
+"	box-shadow: inset 0px 10px 38px -3px rgba(0,0,0,0.1);\n"
+"}")
+        self.Subframe_home_2.setFrameShape(QFrame.StyledPanel)
+        self.Subframe_home_2.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.Subframe_home_2)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.lb_nmServiHome_2 = QLabel(self.Subframe_home_2)
+        self.lb_nmServiHome_2.setObjectName(u"lb_nmServiHome_2")
+        self.lb_nmServiHome_2.setFont(font5)
+        self.lb_nmServiHome_2.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_14.addWidget(self.lb_nmServiHome_2)
+
+
+        self.verticalLayout_10.addWidget(self.Subframe_home_2)
+
+        self.lb_home = QLabel(self.pg_home)
+        self.lb_home.setObjectName(u"lb_home")
+        self.lb_home.setGeometry(QRect(9, 9, 211, 40))
+        font6 = QFont()
+        font6.setFamily(u"Arial Narrow")
+        font6.setPointSize(15)
+        self.lb_home.setFont(font6)
+        self.lb_home.setStyleSheet(u"")
+        self.lb_home.setMargin(10)
         self.stackedWidget.addWidget(self.pg_home)
         self.pg_cad_Unidade = QWidget()
         self.pg_cad_Unidade.setObjectName(u"pg_cad_Unidade")
@@ -425,10 +517,10 @@ class Ui_MainWindow(object):
         self.frame_8 = QFrame(self.tab_2)
         self.frame_8.setObjectName(u"frame_8")
         self.frame_8.setGeometry(QRect(30, 160, 721, 371))
-        font4 = QFont()
-        font4.setFamily(u"Arial Narrow")
-        font4.setPointSize(9)
-        self.frame_8.setFont(font4)
+        font7 = QFont()
+        font7.setFamily(u"Arial Narrow")
+        font7.setPointSize(9)
+        self.frame_8.setFont(font7)
         self.frame_8.setFrameShape(QFrame.NoFrame)
         self.frame_8.setFrameShadow(QFrame.Plain)
         self.tableServicos = QTableWidget(self.frame_8)
@@ -468,12 +560,12 @@ class Ui_MainWindow(object):
         self.btnBack = QPushButton(self.layoutWidget)
         self.btnBack.setObjectName(u"btnBack")
         self.btnBack.setMaximumSize(QSize(30, 20))
-        font5 = QFont()
-        font5.setFamily(u"Arial Narrow")
-        font5.setPointSize(9)
-        font5.setBold(True)
-        font5.setWeight(75)
-        self.btnBack.setFont(font5)
+        font8 = QFont()
+        font8.setFamily(u"Arial Narrow")
+        font8.setPointSize(9)
+        font8.setBold(True)
+        font8.setWeight(75)
+        self.btnBack.setFont(font8)
 
         self.horizontalLayout_12.addWidget(self.btnBack)
 
@@ -485,7 +577,7 @@ class Ui_MainWindow(object):
 
         self.lb_nm_pgs = QLabel(self.layoutWidget)
         self.lb_nm_pgs.setObjectName(u"lb_nm_pgs")
-        self.lb_nm_pgs.setFont(font4)
+        self.lb_nm_pgs.setFont(font7)
 
         self.horizontalLayout_12.addWidget(self.lb_nm_pgs)
 
@@ -498,17 +590,17 @@ class Ui_MainWindow(object):
         self.btnNext = QPushButton(self.layoutWidget)
         self.btnNext.setObjectName(u"btnNext")
         self.btnNext.setMaximumSize(QSize(30, 20))
-        self.btnNext.setFont(font5)
+        self.btnNext.setFont(font8)
 
         self.horizontalLayout_12.addWidget(self.btnNext)
 
         self.label_11 = QLabel(self.tab_2)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setGeometry(QRect(30, 140, 201, 16))
-        font6 = QFont()
-        font6.setFamily(u"Arial Narrow")
-        font6.setPointSize(12)
-        self.label_11.setFont(font6)
+        font9 = QFont()
+        font9.setFamily(u"Arial Narrow")
+        font9.setPointSize(12)
+        self.label_11.setFont(font9)
         self.groupBox = QGroupBox(self.tab_2)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setGeometry(QRect(30, 20, 551, 91))
@@ -641,7 +733,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.stackedWidget)
 
 
-        self.gridLayout.addWidget(self.frame_telas, 3, 1, 1, 1)
+        self.gridLayout.addWidget(self.frame_telas, 3, 2, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -699,7 +791,11 @@ class Ui_MainWindow(object):
         ___qtreewidgetitem12.setText(0, QCoreApplication.translate("MainWindow", u"Quita\u00e7\u00e3o", None));
         self.my_treeWidget.setSortingEnabled(__sortingEnabled)
 
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"PAGINA INICIAL - HOME", None))
+        self.lb_ServiHome.setText(QCoreApplication.translate("MainWindow", u"         TOTAL DE SERVI\u00c7OS ATIVOS", None))
+        self.lb_nmServiHome.setText("")
+        self.lb_ServiHome_2.setText(QCoreApplication.translate("MainWindow", u"    TOTAL DE SERVI\u00c7OS VENCIDOS", None))
+        self.lb_nmServiHome_2.setText("")
+        self.lb_home.setText(QCoreApplication.translate("MainWindow", u"Home - Demonstrativos", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Unidade: ", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Raz\u00e3o: ", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"CNPJ: ", None))
