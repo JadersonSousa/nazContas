@@ -11,7 +11,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWIndow, self).__init__()
         self.setupUi(self)
-        self.setWindowTitle("NazContas - Sistema de controle de Contas")
+        self.setWindowTitle(f"NazContas - Sistema de controle de Contas - Versão: {get_version()}")
         self.showMaximized()
         self.my_treeWidget.itemClicked.connect(self.tree_onclick)
         
@@ -80,7 +80,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
 
                 else:
                     msgErro = data['error']
-                    QMessageBox.critical(self, 'Erro', '{}'.format(msgErro))
+                    QMessageBox.critical(self, 'Erro', f'{msgErro}')
 
     def tabUnidades(self, page):
 
