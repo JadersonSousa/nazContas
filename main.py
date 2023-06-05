@@ -6,7 +6,6 @@ from backend import *
 from utlis import *
 import sqlite3
 
-
 class MainWIndow(QMainWindow, Ui_MainWindow):
     
     def __init__(self):
@@ -59,7 +58,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
         uf = self.input_uf.text()
 
         if unidade == '' or razaoSocial == '' or cnpj == '' or cidade == '' or uf == '':
-            QMessageBox.critical(self, 'Erro', 'Preencha o todos os campos requeridos')
+            QMessageBox.critical(self, 'ALERTA DE ERRO', 'Preencha o todos os campos requeridos')
         else:
             data = cadastroUnidade(unidade, frmtText(text=str(razaoSocial.title())), cnpj, cidade, uf)
 
