@@ -160,7 +160,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
                         self.tableServicos.setItem(row, column, item)                
                             
         except sqlite3.Error as erros:
-            print("Error ao buscar informações no banco: vwServicos", erros)
+            print("Error ao buscar informações no banco: vw_TotalServicos", erros)
 
         finally:
             cursor.close()
