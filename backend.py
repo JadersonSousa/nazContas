@@ -12,6 +12,45 @@ try:
 except sqlite3.Error as erros:
     print('Erro ao conectar ao db', erros)
 
+
+def versionSys(version, hshVersion):
+    try:
+
+        with connect:
+            cursor = connect.cursor()
+            
+            cursor.execute(f"SELECT 1 FROM tbSys WHERE version= ?", [version])
+            existe = cursor.fetchone()
+            
+            if not existe:
+                sql = "INSERT INTO tbSys (version, hashVersion) VALUES(?,?)"
+                cursor.execute(sql, (version, hshVersion))
+                connect.commit()
+
+    except sqlite3.Error as erro:
+        print(f'Erro aqui na versionSys: {erro}')
+    finally:
+        cursor.close()
+
+def versaoAtual():
+    try:
+        with connect:
+            cursor = connect.cursor()
+            sql = "SELECT version FROM tbSys ORDER BY id DESC LIMIT 1"
+            cursor.execute(sql)
+            result = cursor.fetchone()
+            
+            return result[0]
+                    
+    except sqlite3.Error as erros:
+        print("Error ao buscar informações no banco", erros)
+
+    finally:
+        cursor.close()
+
+
+
+
 def unidadesNegocios():
     try:
         with connect:

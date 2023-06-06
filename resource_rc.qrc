@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icon">
+    <file>icone.ico</file>
     <file>icon/lg-naz.gif</file>
     <file>icon/home.png</file>
     <file>icon/Logo-Nazaria.png</file>

@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resource_rc.qrc">
+    <normaloff>:/icon/icone.ico</normaloff>:/icon/icone.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true"/>
@@ -482,7 +486,7 @@
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <widget class="QWidget" name="">
+            <widget class="QWidget" name="layoutWidget">
              <property name="geometry">
               <rect>
                <x>10</x>
@@ -527,7 +531,6 @@
                  <string notr="true">#Subframe_home {
 	background-color: #fff;
 	border-radius: 15px;
-	box-shadow: inset 0px 10px 38px -3px rgba(0,0,0,0.1);
 }</string>
                 </property>
                 <property name="frameShape">
@@ -614,7 +617,6 @@
                  <string notr="true">#Subframe_home_2 {
 	background-color: #fff;
 	border-radius: 15px;
-	box-shadow: inset 0px 10px 38px -3px rgba(0,0,0,0.1);
 }</string>
                 </property>
                 <property name="frameShape">

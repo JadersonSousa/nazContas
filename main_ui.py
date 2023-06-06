@@ -24,6 +24,9 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        icon = QIcon()
+        icon.addFile(u":/icon/icone.ico", QSize(), QIcon.Normal, QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"")
@@ -75,59 +78,59 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.my_treeWidget = QTreeWidget(self.frame_menu)
-        icon = QIcon()
-        icon.addFile(u":/icon/icon/home.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1 = QIcon()
+        icon1.addFile(u":/icon/icon/home.png", QSize(), QIcon.Normal, QIcon.Off)
         brush = QBrush(QColor(0, 0, 0, 216))
         brush.setStyle(Qt.NoBrush)
         font = QFont()
         font.setBold(True)
         font.setWeight(75)
-        icon1 = QIcon()
-        icon1.addFile(u":/icon/icon/config.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2 = QIcon()
+        icon2.addFile(u":/icon/icon/config.png", QSize(), QIcon.Normal, QIcon.Off)
         font1 = QFont()
         font1.setFamily(u"Roboto")
         font1.setPointSize(10)
         font1.setBold(True)
         font1.setWeight(75)
-        icon2 = QIcon()
-        icon2.addFile(u":/icon/icon/setConfig.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3 = QIcon()
+        icon3.addFile(u":/icon/icon/setConfig.png", QSize(), QIcon.Normal, QIcon.Off)
         font2 = QFont()
         font2.setPointSize(8)
-        icon3 = QIcon()
-        icon3.addFile(u":/icon/icon/relatorios.png", QSize(), QIcon.Normal, QIcon.Off)
         icon4 = QIcon()
-        icon4.addFile(u":/icon/icon/lancamentos.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/icon/icon/relatorios.png", QSize(), QIcon.Normal, QIcon.Off)
         icon5 = QIcon()
-        icon5.addFile(u":/icon/icon/setLanc.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/icon/icon/lancamentos.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6 = QIcon()
+        icon6.addFile(u":/icon/icon/setLanc.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtreewidgetitem = QTreeWidgetItem(self.my_treeWidget)
         __qtreewidgetitem.setTextAlignment(0, Qt.AlignLeading|Qt.AlignVCenter);
         __qtreewidgetitem.setFont(0, font);
         __qtreewidgetitem.setForeground(0, brush);
-        __qtreewidgetitem.setIcon(0, icon);
+        __qtreewidgetitem.setIcon(0, icon1);
         __qtreewidgetitem1 = QTreeWidgetItem(self.my_treeWidget)
         __qtreewidgetitem1.setFont(0, font1);
-        __qtreewidgetitem1.setIcon(0, icon1);
+        __qtreewidgetitem1.setIcon(0, icon2);
         __qtreewidgetitem2 = QTreeWidgetItem(__qtreewidgetitem1)
         __qtreewidgetitem2.setFont(0, font2);
-        __qtreewidgetitem2.setIcon(0, icon2);
+        __qtreewidgetitem2.setIcon(0, icon3);
         __qtreewidgetitem3 = QTreeWidgetItem(__qtreewidgetitem1)
         __qtreewidgetitem3.setFont(0, font2);
-        __qtreewidgetitem3.setIcon(0, icon2);
+        __qtreewidgetitem3.setIcon(0, icon3);
         __qtreewidgetitem4 = QTreeWidgetItem(__qtreewidgetitem1)
         __qtreewidgetitem4.setFont(0, font2);
-        __qtreewidgetitem4.setIcon(0, icon2);
+        __qtreewidgetitem4.setIcon(0, icon3);
         __qtreewidgetitem5 = QTreeWidgetItem(self.my_treeWidget)
         __qtreewidgetitem5.setFont(0, font1);
-        __qtreewidgetitem5.setIcon(0, icon3);
+        __qtreewidgetitem5.setIcon(0, icon4);
         QTreeWidgetItem(__qtreewidgetitem5)
         __qtreewidgetitem6 = QTreeWidgetItem(__qtreewidgetitem5)
         QTreeWidgetItem(__qtreewidgetitem6)
         QTreeWidgetItem(__qtreewidgetitem6)
         __qtreewidgetitem7 = QTreeWidgetItem(self.my_treeWidget)
         __qtreewidgetitem7.setFont(0, font1);
-        __qtreewidgetitem7.setIcon(0, icon4);
+        __qtreewidgetitem7.setIcon(0, icon5);
         __qtreewidgetitem8 = QTreeWidgetItem(__qtreewidgetitem7)
-        __qtreewidgetitem8.setIcon(0, icon5);
+        __qtreewidgetitem8.setIcon(0, icon6);
         self.my_treeWidget.setObjectName(u"my_treeWidget")
         self.my_treeWidget.setEnabled(True)
         font3 = QFont()
@@ -188,13 +191,13 @@ class Ui_MainWindow(object):
         self.frame_6.setGeometry(QRect(10, 10, 541, 140))
         self.frame_6.setFrameShape(QFrame.StyledPanel)
         self.frame_6.setFrameShadow(QFrame.Raised)
-        self.widget = QWidget(self.frame_6)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(10, 10, 180, 70))
-        self.verticalLayout_8 = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(self.frame_6)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(10, 10, 180, 70))
+        self.verticalLayout_8 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.lb_ServiHome = QLabel(self.widget)
+        self.lb_ServiHome = QLabel(self.layoutWidget)
         self.lb_ServiHome.setObjectName(u"lb_ServiHome")
         self.lb_ServiHome.setMaximumSize(QSize(16777215, 20))
         font4 = QFont()
@@ -206,13 +209,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.lb_ServiHome)
 
-        self.Subframe_home = QFrame(self.widget)
+        self.Subframe_home = QFrame(self.layoutWidget)
         self.Subframe_home.setObjectName(u"Subframe_home")
         self.Subframe_home.setMaximumSize(QSize(16777215, 80))
         self.Subframe_home.setStyleSheet(u"#Subframe_home {\n"
 "	background-color: #fff;\n"
 "	border-radius: 15px;\n"
-"	box-shadow: inset 0px 10px 38px -3px rgba(0,0,0,0.1);\n"
 "}")
         self.Subframe_home.setFrameShape(QFrame.StyledPanel)
         self.Subframe_home.setFrameShadow(QFrame.Raised)
@@ -251,7 +253,6 @@ class Ui_MainWindow(object):
         self.Subframe_home_2.setStyleSheet(u"#Subframe_home_2 {\n"
 "	background-color: #fff;\n"
 "	border-radius: 15px;\n"
-"	box-shadow: inset 0px 10px 38px -3px rgba(0,0,0,0.1);\n"
 "}")
         self.Subframe_home_2.setFrameShape(QFrame.StyledPanel)
         self.Subframe_home_2.setFrameShadow(QFrame.Raised)
@@ -551,13 +552,13 @@ class Ui_MainWindow(object):
         self.buttonsTable.setMaximumSize(QSize(16777215, 35))
         self.buttonsTable.setFrameShape(QFrame.StyledPanel)
         self.buttonsTable.setFrameShadow(QFrame.Raised)
-        self.layoutWidget = QWidget(self.buttonsTable)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(0, 0, 143, 25))
-        self.horizontalLayout_12 = QHBoxLayout(self.layoutWidget)
+        self.layoutWidget1 = QWidget(self.buttonsTable)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(0, 0, 143, 25))
+        self.horizontalLayout_12 = QHBoxLayout(self.layoutWidget1)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.btnBack = QPushButton(self.layoutWidget)
+        self.btnBack = QPushButton(self.layoutWidget1)
         self.btnBack.setObjectName(u"btnBack")
         self.btnBack.setMaximumSize(QSize(30, 20))
         font8 = QFont()
@@ -569,25 +570,25 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_12.addWidget(self.btnBack)
 
-        self.nm_pg = QLabel(self.layoutWidget)
+        self.nm_pg = QLabel(self.layoutWidget1)
         self.nm_pg.setObjectName(u"nm_pg")
         self.nm_pg.setMaximumSize(QSize(20, 16777215))
 
         self.horizontalLayout_12.addWidget(self.nm_pg)
 
-        self.lb_nm_pgs = QLabel(self.layoutWidget)
+        self.lb_nm_pgs = QLabel(self.layoutWidget1)
         self.lb_nm_pgs.setObjectName(u"lb_nm_pgs")
         self.lb_nm_pgs.setFont(font7)
 
         self.horizontalLayout_12.addWidget(self.lb_nm_pgs)
 
-        self.tt_nm_pg = QLabel(self.layoutWidget)
+        self.tt_nm_pg = QLabel(self.layoutWidget1)
         self.tt_nm_pg.setObjectName(u"tt_nm_pg")
         self.tt_nm_pg.setMaximumSize(QSize(20, 16777215))
 
         self.horizontalLayout_12.addWidget(self.tt_nm_pg)
 
-        self.btnNext = QPushButton(self.layoutWidget)
+        self.btnNext = QPushButton(self.layoutWidget1)
         self.btnNext.setObjectName(u"btnNext")
         self.btnNext.setMaximumSize(QSize(30, 20))
         self.btnNext.setFont(font8)
@@ -608,14 +609,14 @@ class Ui_MainWindow(object):
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setGeometry(QRect(380, 50, 161, 23))
         self.pushButton_4.setFont(font)
-        self.layoutWidget1 = QWidget(self.groupBox)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(190, 20, 161, 27))
-        self.horizontalLayout_10 = QHBoxLayout(self.layoutWidget1)
+        self.layoutWidget2 = QWidget(self.groupBox)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(190, 20, 161, 27))
+        self.horizontalLayout_10 = QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.lineEdit_6 = QLineEdit(self.layoutWidget1)
+        self.lineEdit_6 = QLineEdit(self.layoutWidget2)
         self.lineEdit_6.setObjectName(u"lineEdit_6")
         self.lineEdit_6.setMinimumSize(QSize(0, 25))
         self.lineEdit_6.setMaximumSize(QSize(16777215, 16777215))
@@ -627,7 +628,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10.addWidget(self.lineEdit_6)
 
-        self.toolButton_3 = QToolButton(self.layoutWidget1)
+        self.toolButton_3 = QToolButton(self.layoutWidget2)
         self.toolButton_3.setObjectName(u"toolButton_3")
         sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy4.setHorizontalStretch(0)
@@ -643,14 +644,14 @@ class Ui_MainWindow(object):
         self.lineEdit_7.setObjectName(u"lineEdit_7")
         self.lineEdit_7.setGeometry(QRect(10, 50, 161, 25))
         self.lineEdit_7.setMinimumSize(QSize(0, 25))
-        self.layoutWidget2 = QWidget(self.groupBox)
-        self.layoutWidget2.setObjectName(u"layoutWidget2")
-        self.layoutWidget2.setGeometry(QRect(10, 20, 161, 27))
-        self.horizontalLayout_8 = QHBoxLayout(self.layoutWidget2)
+        self.layoutWidget3 = QWidget(self.groupBox)
+        self.layoutWidget3.setObjectName(u"layoutWidget3")
+        self.layoutWidget3.setGeometry(QRect(10, 20, 161, 27))
+        self.horizontalLayout_8 = QHBoxLayout(self.layoutWidget3)
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.lineEdit_4 = QLineEdit(self.layoutWidget2)
+        self.lineEdit_4 = QLineEdit(self.layoutWidget3)
         self.lineEdit_4.setObjectName(u"lineEdit_4")
         self.lineEdit_4.setMinimumSize(QSize(0, 25))
         self.lineEdit_4.setMaximumSize(QSize(16777215, 16777215))
@@ -662,7 +663,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.lineEdit_4)
 
-        self.toolButton = QToolButton(self.layoutWidget2)
+        self.toolButton = QToolButton(self.layoutWidget3)
         self.toolButton.setObjectName(u"toolButton")
         self.toolButton.setEnabled(True)
         sizePolicy4.setHeightForWidth(self.toolButton.sizePolicy().hasHeightForWidth())
@@ -675,14 +676,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.toolButton)
 
-        self.layoutWidget3 = QWidget(self.groupBox)
-        self.layoutWidget3.setObjectName(u"layoutWidget3")
-        self.layoutWidget3.setGeometry(QRect(190, 50, 161, 22))
-        self.horizontalLayout_11 = QHBoxLayout(self.layoutWidget3)
+        self.layoutWidget4 = QWidget(self.groupBox)
+        self.layoutWidget4.setObjectName(u"layoutWidget4")
+        self.layoutWidget4.setGeometry(QRect(190, 50, 161, 22))
+        self.horizontalLayout_11 = QHBoxLayout(self.layoutWidget4)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.label_8 = QLabel(self.layoutWidget3)
+        self.label_8 = QLabel(self.layoutWidget4)
         self.label_8.setObjectName(u"label_8")
         sizePolicy5 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
         sizePolicy5.setHorizontalStretch(0)
@@ -692,7 +693,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addWidget(self.label_8)
 
-        self.dateEdit = QDateEdit(self.layoutWidget3)
+        self.dateEdit = QDateEdit(self.layoutWidget4)
         self.dateEdit.setObjectName(u"dateEdit")
         self.dateEdit.setWrapping(True)
         self.dateEdit.setFrame(True)
@@ -700,20 +701,20 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addWidget(self.dateEdit)
 
-        self.layoutWidget4 = QWidget(self.groupBox)
-        self.layoutWidget4.setObjectName(u"layoutWidget4")
-        self.layoutWidget4.setGeometry(QRect(380, 20, 161, 27))
-        self.horizontalLayout_9 = QHBoxLayout(self.layoutWidget4)
+        self.layoutWidget5 = QWidget(self.groupBox)
+        self.layoutWidget5.setObjectName(u"layoutWidget5")
+        self.layoutWidget5.setGeometry(QRect(380, 20, 161, 27))
+        self.horizontalLayout_9 = QHBoxLayout(self.layoutWidget5)
         self.horizontalLayout_9.setSpacing(0)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.lineEdit_5 = QLineEdit(self.layoutWidget4)
+        self.lineEdit_5 = QLineEdit(self.layoutWidget5)
         self.lineEdit_5.setObjectName(u"lineEdit_5")
         self.lineEdit_5.setMinimumSize(QSize(0, 25))
 
         self.horizontalLayout_9.addWidget(self.lineEdit_5)
 
-        self.toolButton_2 = QToolButton(self.layoutWidget4)
+        self.toolButton_2 = QToolButton(self.layoutWidget5)
         self.toolButton_2.setObjectName(u"toolButton_2")
         sizePolicy4.setHeightForWidth(self.toolButton_2.sizePolicy().hasHeightForWidth())
         self.toolButton_2.setSizePolicy(sizePolicy4)

@@ -11,7 +11,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWIndow, self).__init__()
         self.setupUi(self)
-        self.setWindowTitle(f"NazContas - Sistema de controle de Contas - Versão: {get_version()}")
+        self.setWindowTitle(f"NazContas - Sistema de controle de Contas - Versão: {versaoAtual()}")
         self.showMaximized()
         self.my_treeWidget.itemClicked.connect(self.tree_onclick)
         

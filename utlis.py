@@ -1,5 +1,5 @@
 import subprocess
-
+from backend import *
 
 
 def frmtText(text):
@@ -21,7 +21,10 @@ def get_version():
 
         result = output.decode('utf-8').strip()
         version = result.rsplit('-', 1)[0]
-        return version
-    
+        hashVersion = result.rsplit('-', 1)[1]
+
+        versionSys(version, hashVersion)
+
     except subprocess.CalledProcessError:
         return 'Versão descodificada'
+get_version()
