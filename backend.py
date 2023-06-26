@@ -71,89 +71,8 @@ def unidadesNegocios():
 
 
 
-def infoUnidade(unidade):
-    try:
-        with connect:
-            cursor = connect.cursor()
-            sql = "SELECT * FROM tbUnidade WHERE unidade='{}'".format(unidade)
-            cursor.execute(sql)
-            result = cursor.fetchall()
-
-            list_inf_und = [item for tupla in result for item in tupla]
-
-            
-            return list_inf_und
-                    
-    except sqlite3.Error as err:
-        print("Error ao buscar informações no banco", err)
-
-    finally:
-        cursor.close()
-
-
-def servicoEmpresa(unidade):
-    try:
-        with connect:
-            cursor = connect.cursor()
-            sql = "SELECT circuito FROM tbServico WHERE codEmpresa='{}'".format(unidade)
-            cursor.execute(sql)
-            result = cursor.fetchall()
-
-            list_inf_serv = [item for tupla in result for item in tupla]
-
-            return list_inf_serv
-                    
-    except sqlite3.Error as err:
-        print("Error ao buscar informações no banco", err)
-
-    finally:
-        cursor.close()
-
-
-def servicoId(id):
-    try:
-        with connect:
-            cursor = connect.cursor()
-            sql = "SELECT * FROM tbServico WHERE codEmpresa='{}'".format(id)
-            cursor.execute(sql)
-            result = cursor.fetchall()
-
-            list_inf_servId = [item for tupla in result for item in tupla]
-            
-            
-            return list_inf_servId
-                    
-    except sqlite3.Error as err:
-        print("Error ao buscar informações no banco", err)
-    
-    finally:
-        cursor.close()
-
-
-
-def tipoServico(codServico):
-    try:
-        with connect:
-            cursor = connect.cursor()
-            sql = "SELECT * FROM tbTipoServ WHERE idTpServ='{}'".format(codServico)
-            cursor.execute(sql)
-            result = cursor.fetchall()
-
-            list_inf_tpServ = [item for tupla in result for item in tupla]
-            
-
-            return list_inf_tpServ
-                    
-    except sqlite3.Error as err:
-        print("Error ao buscar informações no banco", err)
-
-    finally:
-        cursor.close()
-
-
 
 # CADASTRO DE EMPRESA
-
 def cadastroUnidade(unidade, razaoSocial, cnpj, cidade, uf):
     try:
         with connect:
@@ -180,7 +99,7 @@ def cadastroUnidade(unidade, razaoSocial, cnpj, cidade, uf):
     
     finally:
         cursor.close()
-
+# FIM cadastroUnidade
 
 # MOSTRANDO DADOS DAS UNIDADES
 def mostrarUnidades():
@@ -199,7 +118,6 @@ def mostrarUnidades():
     finally:
         cursor.close()
 # FIM mostrarUnidades
-
 
 # CADASTRANDO OS TIPOS DE SERVIÇOS
 def cadTipoServico(tipoServico):
@@ -265,3 +183,115 @@ def vw_TotalServicos():
     finally:
         cursor.close()
 # FIM vwServicos
+
+def vwHomeInf():
+    try:
+        with connect:
+            cursor = connect.cursor()
+            sql = f"""SELECT (SELECT count(*) FROM tbServico) as 'contagem_servicos',
+                             (SELECT count(*) FROM tbUnidade) as 'contagem_unidades',
+                             (SELECT count(*) FROM tbFornecedor) as 'contagem_fornecedors'"""
+
+            cursor.execute(sql)
+            result = cursor.fetchall()
+            
+            return [item for tupla in result for item in tupla]
+
+    except sqlite3.Error as erro:
+        print(f"Houve um erro aqui na vwHomeInf => {erro}")
+    
+    finally:
+        cursor.close()
+
+# CADASTRO DE FORNECEDORES
+def cadFornecedor(cnpj, nome, fantasia, tipoAtv, bairro, logradouro, num, cep, municipio, uf):
+    try:
+        with connect:
+            cursor = connect.cursor()
+            sql = """INSERT INTO tbFornecedores 
+                                        (cnpjFonecedor,
+                                        nomeFornecedor,
+                                        nomeFantasia,
+                                        atividadePrincipal,
+                                        bairro,
+                                        logradouro,
+                                        numero,
+                                        cep,
+                                        municipio,
+                                        uf ) VALUES(?,?,?,?,?,?,?,?,?,?)"""
+            
+            cursor.execute(sql, (cnpj, nome, fantasia, tipoAtv, bairro, logradouro, num, cep, municipio, uf))
+            codUnidade = cursor.lastrowid
+            result = {'data': codUnidade}
+
+            connect.commit()
+            
+            return result
+    except sqlite3.Error as erros:
+        
+        mensagem = str(erros)
+
+        if 'UNIQUE constraint failed' in mensagem:
+            mensagem = "Erro de duplicidade ja existe unidade cadastrada com esssas credenciais"
+        elif "NOT NULL constraint falied" in mensagem:
+            mensagem = "Os valores não podem ser vazios"
+        err = {'error': mensagem}
+        return err
+    
+    finally:
+        cursor.close()
+# FIM cadFornecedor
+
+# MOSTRANDO DADOS UNIDADE PARA TAB_CAD
+def mostrarUnidades_CadServ():
+    try:
+        with connect:
+            cursor = connect.cursor()
+            sql = "SELECT idEmpresa, cnpj, unidade, cidade, uf FROM tbUnidade"
+            cursor.execute(sql)
+            result = cursor.fetchall()
+
+            return result
+                    
+    except sqlite3.Error as erros:
+        print("Error ao buscar informações no banco: mostrarUnidades", erros)
+
+    finally:
+        cursor.close()
+# FIM mostrarUnidades_CadServ
+
+# MOSTRANDO DADOS FORNCEDOR PARA TAB_CAD
+def mostrarFornecedores_CadServ():
+    try:
+        with connect:
+            cursor = connect.cursor()
+            sql = "SELECT * FROM tbFornecedor"
+            cursor.execute(sql)
+            result = cursor.fetchall()
+
+            return result
+                    
+    except sqlite3.Error as erros:
+        print("Error ao buscar informações no banco: mostrarUnidades", erros)
+
+    finally:
+        cursor.close()
+# FIM mostrarFornecedores_CadServ
+
+# MOSTRANDO DADOS TIPO SERVICO PARA TAB_CAD
+def mostrarTipoServico_CadServ():
+    try:
+        with connect:
+            cursor = connect.cursor()
+            sql = "SELECT * FROM tbTipoServ"
+            cursor.execute(sql)
+            result = cursor.fetchall()
+
+            return result
+                    
+    except sqlite3.Error as err:
+        print("Error ao buscar informações no banco", err)
+
+    finally:
+        cursor.close()
+# FIM mostrarTipoServico_CadServ

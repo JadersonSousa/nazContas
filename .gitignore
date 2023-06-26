@@ -1,2 +1,6 @@
 /__pycache__
 /venv
+main.ui
+modalEmpresa.ui
+modalForncedor.ui
+modalTpServico.ui

@@ -1,6 +1,6 @@
 import subprocess
 from backend import *
-
+from apiCnpj import *
 
 def frmtText(text):
     palavras = text.split()
@@ -18,13 +18,23 @@ def frmtText(text):
 def get_version():
     try:
         output = subprocess.check_output(['git', 'describe', '--tag'])
-
         result = output.decode('utf-8').strip()
         version = result.rsplit('-', 1)[0]
         hashVersion = result.rsplit('-', 1)[1]
 
-        versionSys(version, hashVersion)
+        if output is not None:
+            pass
+        else:
+            versionSys(version, hashVersion)
 
     except subprocess.CalledProcessError:
         return 'Versão descodificada'
-get_version()
+    
+
+def mostrarVersao():
+    try:
+        with open('version.txt', 'r') as file:
+            versao = file.read()
+            return versao
+    except FileNotFoundError:
+        print(f'Arquivo de versão nã encontrado: mostrarVersao')

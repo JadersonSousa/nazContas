@@ -476,7 +476,7 @@
              <rect>
               <x>10</x>
               <y>10</y>
-              <width>541</width>
+              <width>661</width>
               <height>140</height>
              </rect>
             </property>
@@ -515,7 +515,10 @@
                  <enum>Qt::LeftToRight</enum>
                 </property>
                 <property name="text">
-                 <string>         TOTAL DE SERVIÇOS ATIVOS</string>
+                 <string>TOTAL DE SERVIÇOS</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -601,7 +604,10 @@
                  <enum>Qt::LeftToRight</enum>
                 </property>
                 <property name="text">
-                 <string>    TOTAL DE SERVIÇOS VENCIDOS</string>
+                 <string>UNIDADES CADASTRADAS</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -658,31 +664,118 @@
               </item>
              </layout>
             </widget>
+            <widget class="QWidget" name="layoutWidget_3">
+             <property name="geometry">
+              <rect>
+               <x>410</x>
+               <y>10</y>
+               <width>180</width>
+               <height>70</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="QLabel" name="lb_ServiHome_3">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Arial Narrow</family>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="text">
+                 <string>TOTAL FORNECEDOR</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="Subframe_home_3">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>80</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">#Subframe_home_3 {
+	background-color: #fff;
+	border-radius: 15px;
+}</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_15">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lb_nmServiHome_3">
+                   <property name="font">
+                    <font>
+                     <pointsize>20</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </widget>
           </widget>
-          <widget class="QLabel" name="lb_home">
+          <widget class="QLabel" name="label_12">
            <property name="geometry">
             <rect>
-             <x>9</x>
-             <y>9</y>
-             <width>211</width>
-             <height>40</height>
+             <x>10</x>
+             <y>20</y>
+             <width>1026</width>
+             <height>31</height>
             </rect>
            </property>
            <property name="font">
             <font>
              <family>Arial Narrow</family>
-             <pointsize>15</pointsize>
+             <pointsize>20</pointsize>
+             <italic>false</italic>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">color: rgb(103, 103, 103);</string>
            </property>
            <property name="text">
-            <string>Home - Demonstrativos</string>
-           </property>
-           <property name="margin">
-            <number>10</number>
+            <string>Home</string>
            </property>
           </widget>
          </widget>
@@ -979,9 +1072,9 @@
               <property name="geometry">
                <rect>
                 <x>50</x>
-                <y>60</y>
-                <width>571</width>
-                <height>71</height>
+                <y>50</y>
+                <width>691</width>
+                <height>461</height>
                </rect>
               </property>
               <property name="frameShape">
@@ -992,45 +1085,435 @@
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_7">
                <item>
-                <widget class="QLineEdit" name="lineEdit_2">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>30</height>
-                  </size>
+                <widget class="QGroupBox" name="groupBox_2">
+                 <property name="title">
+                  <string>Informações de Cadastro</string>
                  </property>
-                 <property name="placeholderText">
-                  <string>Nome Fonrnecedor</string>
+                 <property name="flat">
+                  <bool>true</bool>
                  </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="lineEdit">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Tipo Serviço</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushButton_2">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>Cadastrar</string>
-                 </property>
+                 <widget class="QPushButton" name="btnCadastroFrn">
+                  <property name="geometry">
+                   <rect>
+                    <x>200</x>
+                    <y>400</y>
+                    <width>370</width>
+                    <height>29</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string>Cadastrar</string>
+                  </property>
+                 </widget>
+                 <widget class="QGroupBox" name="groupBox_3">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>160</y>
+                    <width>641</width>
+                    <height>211</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="title">
+                   <string>Endereço</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                  </property>
+                  <property name="flat">
+                   <bool>false</bool>
+                  </property>
+                  <property name="checkable">
+                   <bool>false</bool>
+                  </property>
+                  <widget class="QWidget" name="layoutWidget">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>20</y>
+                     <width>211</width>
+                     <height>22</height>
+                    </rect>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_22">
+                    <property name="spacing">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_19">
+                      <property name="minimumSize">
+                       <size>
+                        <width>80</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Bairro:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="input_bairro_fornecedor"/>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="layoutWidget">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>50</y>
+                     <width>212</width>
+                     <height>24</height>
+                    </rect>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_23">
+                    <property name="spacing">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_20">
+                      <property name="minimumSize">
+                       <size>
+                        <width>80</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Logradouro</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="input_logradouro_forncedor"/>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="layoutWidget">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>80</y>
+                     <width>211</width>
+                     <height>22</height>
+                    </rect>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_21">
+                    <property name="spacing">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_18">
+                      <property name="minimumSize">
+                       <size>
+                        <width>80</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Número:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="input_num_fornecedor"/>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="layoutWidget">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>110</y>
+                     <width>211</width>
+                     <height>22</height>
+                    </rect>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_20">
+                    <property name="spacing">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_17">
+                      <property name="minimumSize">
+                       <size>
+                        <width>80</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>CEP:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="input_cep_fornecedor"/>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="layoutWidget">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>140</y>
+                     <width>211</width>
+                     <height>22</height>
+                    </rect>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_24">
+                    <property name="spacing">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_21">
+                      <property name="minimumSize">
+                       <size>
+                        <width>80</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Municipio:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="input_munic_fornecedor"/>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="layoutWidget">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>170</y>
+                     <width>211</width>
+                     <height>22</height>
+                    </rect>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_25">
+                    <property name="spacing">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_22">
+                      <property name="minimumSize">
+                       <size>
+                        <width>80</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>UF:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="input_uf_fornecedor"/>
+                    </item>
+                   </layout>
+                  </widget>
+                 </widget>
+                 <widget class="QWidget" name="layoutWidget">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>411</width>
+                    <height>26</height>
+                   </rect>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="0,0,0">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>1</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_13">
+                     <property name="minimumSize">
+                      <size>
+                       <width>80</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Procurar CNPJ:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="input_cnpj_fornecedor">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                     <property name="layoutDirection">
+                      <enum>Qt::LeftToRight</enum>
+                     </property>
+                     <property name="maxLength">
+                      <number>14</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_procurar_cnpj">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>22</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="resource_rc.qrc">
+                       <normaloff>:/icon/icon/setLupa.png</normaloff>:/icon/icon/setLupa.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="layoutWidget">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>50</y>
+                    <width>411</width>
+                    <height>22</height>
+                   </rect>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_17">
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_14">
+                     <property name="minimumSize">
+                      <size>
+                       <width>80</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Nome:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="input_nome_fornecedor"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="layoutWidget">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>80</y>
+                    <width>411</width>
+                    <height>22</height>
+                   </rect>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_18">
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_15">
+                     <property name="minimumSize">
+                      <size>
+                       <width>80</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Nome Fantasia:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="input_nmFantasia_forncedor"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="layoutWidget">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>110</y>
+                    <width>411</width>
+                    <height>22</height>
+                   </rect>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_19">
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_16">
+                     <property name="minimumSize">
+                      <size>
+                       <width>80</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Tipo de Atividade:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="input_tipo_atv"/>
+                   </item>
+                  </layout>
+                 </widget>
                 </widget>
                </item>
               </layout>
+             </widget>
+             <widget class="QLabel" name="label_2">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>0</y>
+                <width>301</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <family>Arial Narrow</family>
+                <pointsize>20</pointsize>
+                <italic>false</italic>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(103, 103, 103);</string>
+              </property>
+              <property name="text">
+               <string>Cadastro de Fornecedor</string>
+              </property>
              </widget>
             </widget>
            </item>
@@ -1049,8 +1532,18 @@
            </property>
            <item>
             <widget class="QLabel" name="label_3">
+             <property name="font">
+              <font>
+               <family>Arial Narrow</family>
+               <pointsize>20</pointsize>
+               <italic>false</italic>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(103, 103, 103);</string>
+             </property>
              <property name="text">
-              <string>    Cadastro de Tipo de Serviços/Serviço</string>
+              <string>  Cadastro Tipo de Serviço / Serviço</string>
              </property>
             </widget>
            </item>
@@ -1084,7 +1577,7 @@
                  <enum>QTabWidget::Triangular</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>1</number>
                 </property>
                 <widget class="QWidget" name="tab">
                  <attribute name="title">
@@ -1373,7 +1866,7 @@
                    <rect>
                     <x>30</x>
                     <y>20</y>
-                    <width>551</width>
+                    <width>721</width>
                     <height>91</height>
                    </rect>
                   </property>
@@ -1383,7 +1876,7 @@
                   <widget class="QPushButton" name="pushButton_4">
                    <property name="geometry">
                     <rect>
-                     <x>380</x>
+                     <x>360</x>
                      <y>50</y>
                      <width>161</width>
                      <height>23</height>
@@ -1404,7 +1897,7 @@
                     <rect>
                      <x>190</x>
                      <y>20</y>
-                     <width>161</width>
+                     <width>281</width>
                      <height>27</height>
                     </rect>
                    </property>
@@ -1422,7 +1915,7 @@
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>16777215</width>
+                        <width>75</width>
                         <height>16777215</height>
                        </size>
                       </property>
@@ -1453,7 +1946,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QToolButton" name="toolButton_3">
+                     <widget class="QToolButton" name="toolBtnFornecedor">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
@@ -1466,6 +1959,12 @@
                         <height>25</height>
                        </size>
                       </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>20</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="text">
                        <string>...</string>
                       </property>
@@ -1474,6 +1973,20 @@
                         <width>20</width>
                         <height>20</height>
                        </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lbFornCad">
+                      <property name="font">
+                       <font>
+                        <pointsize>7</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string/>
                       </property>
                      </widget>
                     </item>
@@ -1503,7 +2016,7 @@
                     <rect>
                      <x>10</x>
                      <y>20</y>
-                     <width>161</width>
+                     <width>171</width>
                      <height>27</height>
                     </rect>
                    </property>
@@ -1521,7 +2034,7 @@
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>16777215</width>
+                        <width>60</width>
                         <height>16777215</height>
                        </size>
                       </property>
@@ -1552,7 +2065,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QToolButton" name="toolButton">
+                     <widget class="QToolButton" name="toolBtnEmpresa">
                       <property name="enabled">
                        <bool>true</bool>
                       </property>
@@ -1566,6 +2079,12 @@
                        <size>
                         <width>0</width>
                         <height>25</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>20</width>
+                        <height>16777215</height>
                        </size>
                       </property>
                       <property name="text">
@@ -1585,6 +2104,26 @@
                       </property>
                       <property name="arrowType">
                        <enum>Qt::NoArrow</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lbEmpCad">
+                      <property name="maximumSize">
+                       <size>
+                        <width>90</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>7</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string/>
                       </property>
                      </widget>
                     </item>
@@ -1637,9 +2176,9 @@
                   <widget class="QWidget" name="layoutWidget">
                    <property name="geometry">
                     <rect>
-                     <x>380</x>
+                     <x>480</x>
                      <y>20</y>
-                     <width>161</width>
+                     <width>231</width>
                      <height>27</height>
                     </rect>
                    </property>
@@ -1655,13 +2194,19 @@
                         <height>25</height>
                        </size>
                       </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>66</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="placeholderText">
                        <string>Tipo serviço</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QToolButton" name="toolButton_2">
+                     <widget class="QToolButton" name="toolBtnTpServ">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
@@ -1674,8 +2219,28 @@
                         <height>25</height>
                        </size>
                       </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>20</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="text">
                        <string>...</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lbTpSrvCad">
+                      <property name="font">
+                       <font>
+                        <pointsize>7</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string/>
                       </property>
                      </widget>
                     </item>
