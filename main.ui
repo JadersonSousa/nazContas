@@ -1873,7 +1873,7 @@
                   <property name="title">
                    <string>Cadastro Serviços</string>
                   </property>
-                  <widget class="QPushButton" name="pushButton_4">
+                  <widget class="QPushButton" name="btnCadServico">
                    <property name="geometry">
                     <rect>
                      <x>360</x>

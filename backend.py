@@ -242,6 +242,38 @@ def cadFornecedor(cnpj, nome, fantasia, tipoAtv, bairro, logradouro, num, cep, m
         cursor.close()
 # FIM cadFornecedor
 
+# CADASTRO DE SERVICO
+def cad_Servico(emp, frn, tpSrv, crc, dtVenc):
+    try:
+        with connect:
+            cursor = connect.cursor()
+            sql = """INSERT INTO tbServico 
+                                        ( codEmpresa, codForn, tipoServico, circuito, diaVencimento ) VALUES(?,?,?,?,?)"""
+            
+            cursor.execute(sql, (emp, frn, tpSrv, crc, dtVenc))
+            codServ = cursor.lastrowid
+            result = {'data': codServ}
+
+            connect.commit()
+            
+            return result
+    except sqlite3.Error as erros:
+        
+        mensagem = str(erros)
+
+        if 'UNIQUE constraint failed' in mensagem:
+            mensagem = "Erro de duplicidade ja existe serviço cadastrado com esssas credenciais"
+        elif "NOT NULL constraint falied" in mensagem:
+            mensagem = "Os valores não podem ser vazios"
+        err = {'error': mensagem}
+        return err
+    
+    finally:
+        cursor.close()
+# FIM cadServico  
+
+
+
 # MOSTRANDO DADOS UNIDADE PARA TAB_CAD
 def mostrarUnidades_CadServ():
     try:

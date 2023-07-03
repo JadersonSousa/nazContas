@@ -33,6 +33,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
         self.toolBtnEmpresa.clicked.connect(self.modalEmpresa)
         self.toolBtnFornecedor.clicked.connect(self.modalFornecedor)
         self.toolBtnTpServ.clicked.connect(self.modalTipoServico)
+        self.btnCadServico.clicked.connect(self.cadServico)
 
         #PAGINAÇÃO DA TABELA DE SERVIÇOS
         self.current_page = 0
@@ -188,6 +189,40 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
                 else:
                     msgErro = data['error']
                     QMessageBox.critical(self, 'Erro', '{}'.format(msgErro))
+
+
+    def cadServico(self):
+
+        emp = self.lineEdit_4.text()
+        frn = self.lineEdit_6.text()
+        tpSrv = self.lineEdit_5.text()
+        crc = self.lineEdit_7.text()
+        dtVnc = self.dateEdit.text()
+
+        if emp == '' or frn == '' or tpSrv == '' or crc == '' or dtVnc == '':
+                    QMessageBox.critical(self, 'Erro', 'Preencha o todos os campos requeridos')
+        else:
+            data = cad_Servico(emp, frn, tpSrv, crc, dtVnc)
+                
+
+            result = data.keys()
+            for chave in result:
+                if chave in 'data':
+                    msg = data['data']
+                            
+                    self.lineEdit_4.clear()
+                    self.lineEdit_6.clear()
+                    self.lineEdit_5.clear()
+                    self.lineEdit_7.clear()
+                    self.dateEdit.clear()
+
+                    QMessageBox.information(self, "Sucesso", "Serviço cadastrado com sucesso. \n Codigo: {}".format(str(msg)))
+
+
+                else:
+                    msgErro = data['error']
+                    QMessageBox.critical(self, 'Erro', '{}'.format(msgErro))
+        
 
 
 # MODAL EMPRESA NO CAD_SERV
