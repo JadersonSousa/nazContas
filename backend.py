@@ -273,6 +273,24 @@ def cad_Servico(emp, frn, tpSrv, crc, dtVenc):
 # FIM cadServico  
 
 
+# MOSTRANDO DADOS UNIDADE PARA TAB_CAD
+def mostrarContas():
+    try:
+        with connect:
+            cursor = connect.cursor()
+            sql = "SELECT idServico, circuito FROM tbServico"
+            cursor.execute(sql)
+            result = cursor.fetchall()
+
+            return result
+                    
+    except sqlite3.Error as erros:
+        print("Error ao buscar informações no banco: mostrarContas", erros)
+
+    finally:
+        cursor.close()
+# FIM mostrarContas
+
 
 # MOSTRANDO DADOS UNIDADE PARA TAB_CAD
 def mostrarUnidades_CadServ():

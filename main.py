@@ -5,6 +5,7 @@ from main_ui import *
 from modalEmpresa_ui import *
 from modalForncedor_ui import *
 from modalTpServico_ui import *
+from modalContas_ui import *
 from backend import *
 from utlis import *
 from apiCnpj import *
@@ -19,9 +20,10 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
         self.setWindowTitle(f"NazContas - Sistema de controle de Contas - Versão: {mostrarVersao()}")
         self.showMaximized()
         self.my_treeWidget.itemClicked.connect(self.tree_onclick)
-        self.progressBar = QProgressBar()
-        self.progressBar.setMinimum(0)
-        self.progressBar.setMaximum(100)
+        self.frmTB = QFrame()
+        self.table_widget = None
+        
+
         
         self.child_item = QTreeWidgetItem(['Child'])
         
@@ -34,6 +36,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
         self.toolBtnFornecedor.clicked.connect(self.modalFornecedor)
         self.toolBtnTpServ.clicked.connect(self.modalTipoServico)
         self.btnCadServico.clicked.connect(self.cadServico)
+        self.toolBtnCrcSrv.clicked.connect(self.modalContas)        
 
         #PAGINAÇÃO DA TABELA DE SERVIÇOS
         self.current_page = 0
@@ -46,6 +49,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
 
         self.homeInfs()
         self.load_data()
+        
 
     
         
@@ -55,7 +59,7 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
             whats_this = item.whatsThis(0)
             self.pagesMain(name=whats_this)
             self.tabUnidades(page=whats_this)
-            
+            self.pageLancamentos(page=whats_this)
         
         if item.whatsThis(0):
             self.pagesMain(name=item.whatsThis(0))
@@ -66,6 +70,11 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
             self.homeInfs()
         next_page = self.stackedWidget.indexOf(self.stackedWidget.findChild(QWidget, name))
         self.stackedWidget.setCurrentIndex(next_page)
+
+    def pageLancamentos(self, page):
+        pass
+
+
 
     
     def cadUnidade(self):
@@ -293,6 +302,28 @@ class MainWIndow(QMainWindow, Ui_MainWindow):
         self.modalTpSrv.show()
 #FIM modalTipoServico
 
+# MODAL CONTAS
+    def modalContas(self):
+        self.modalConta = DialogContas(self)
+
+        dadosContas = mostrarContas()
+
+        self.modalConta.tbConta.verticalHeader().setVisible(False)
+        self.modalConta.tbConta.setRowCount(len(dadosContas))
+        self.modalConta.tbConta.setColumnCount(len(dadosContas[0]))
+
+        for row, registro in enumerate(dadosContas):
+            for column, valor in enumerate(registro):
+                item = QTableWidgetItem(str(valor))
+                self.modalConta.tbConta.setItem(row, column, item)
+                self.modalConta.tbConta.resizeColumnsToContents()        
+
+
+        self.modalConta.setModal(True)
+        self.modalConta.show()
+#FIM modalContas
+
+
 # OBTER VALOR
     def obter_valor_empresa(self, row, colum):
         empresa = self.modal.tableWidget.item(row, 0)
@@ -395,6 +426,14 @@ class DialogTpSrv(QDialog, Ui_DialogTpSrv):
         self.setupUi(self)
         self.setWindowTitle("Modal - Tipo Serviço")
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
+        self.window = window
+
+class DialogContas(QDialog, Ui_DialogConta):
+    def __init__(self, window):
+        super(DialogContas, self).__init__()
+        self.setupUi(self)
+        self.setWindowTitle("Modal - Contas")
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.window = window
 
 
